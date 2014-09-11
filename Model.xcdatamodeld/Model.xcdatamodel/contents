@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="1.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Achievements" representedClassName="Achievements" syncable="YES">
+        <attribute name="achievement_Description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="achievement_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="achievement_Link_Type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="achievement_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="achievements_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="achievements_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="achievements_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Financial" representedClassName="Financial" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="financial_Goal_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="financial_Goal_Description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="financial_Goal_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="financial_Goal_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="financial_Goal_Point_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="financial_Goal_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="financial_Goal_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Goals" representedClassName="Goals" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="goal_Complete" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="goal_Duration" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="goal_End_Time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="goal_Financial_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_Health_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_Is_Shared" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="goal_Journal_Entry_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goal_Relationship_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_Start_Time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="goal_Status" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="goal_Type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goal_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal_Well_Being_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Goals_DashBoard" representedClassName="Goals_DashBoard" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="goals_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="goals_Total_Financial" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goals_Total_Health" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goals_Total_Relationships" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goals_Total_Well_Being" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="goals_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="fk_Goal_User_ID_Financial" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Financial" syncable="YES"/>
+        <relationship name="fk_Goal_User_ID_Health" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Health" syncable="YES"/>
+        <relationship name="fk_Goal_User_ID_Relationships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relationships" syncable="YES"/>
+        <relationship name="fk_Goal_User_ID_Well_Being" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Well_Being" syncable="YES"/>
+    </entity>
+    <entity name="Health" representedClassName="Health" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="health_Goal_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="health_Goal_Description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="health_Goal_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="health_Goal_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="health_Goal_Point_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="health_Goal_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="health_Goal_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Inspirations" representedClassName="Inspirations" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="inspiration_Goal_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inspiration_Goal_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="inspiration_Goal_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="inspiration_Goal_Point_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inspiration_Goal_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="inspiration_Goal_URL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inspiration_Goal_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Journal_Entries" representedClassName="Journal_Entries" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="journal_Entry_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="journal_Entry_Description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="journal_Entry_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="journal_Entry_Link_Type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="journal_Entry_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="journal_Entry_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="journey_Entry_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Relationships" representedClassName="Relationships" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="relationship_Goal_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="relationship_Goal_Description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relationship_Goal_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="relationship_Goal_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="relationship_Goal_Point_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="relationship_Goal_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="relationship_Goal_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Rewards" representedClassName="Rewards" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="points_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="reward_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reward_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="reward_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="total_Bronze_Points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="total_Gold_Points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="total_Silver_Points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Stats_Board" representedClassName="Stats_Board" syncable="YES">
+        <attribute name="stat_Board_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="stat_Board_Total_Achievements" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="stat_Board_Total_Goals" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="stat_Board_Total_Inspirations" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="stat_Board_Total_Journal_Entries" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="stat_Board_Total_Points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stat_Board_Total_Rewards" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="stat_Board_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="fk_Stat_Board_User_ID_Achievements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Achievements" syncable="YES"/>
+        <relationship name="fk_Stat_Board_User_ID_Goals" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goals_DashBoard" syncable="YES"/>
+        <relationship name="fk_Stat_Board_User_ID_Inspirations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Inspirations" syncable="YES"/>
+        <relationship name="fk_Stat_Board_User_ID_Journal_Entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journal_Entries" syncable="YES"/>
+        <relationship name="fk_Stat_Board_User_ID_Rewards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rewards" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="is_FB_Login" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_Sync" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" maxValueString="100" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="profile_Picture" optional="YES" attributeType="String" maxValueString="100" syncable="YES"/>
+        <attribute name="receive_Info_Per_Dev" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="user_FB_Friends" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="user_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" maxValueString="100" syncable="YES"/>
+        <relationship name="fk_User_StatsBoard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stats_Board" syncable="YES"/>
+    </entity>
+    <entity name="Well_Being" representedClassName="Well_Being" syncable="YES">
+        <attribute name="created_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modified_On" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="well_Being_Goal_Complete_Status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="well_Being_Goal_Description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="well_Being_Goal_End_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="well_Being_Goal_ID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="well_Being_Goal_Point_Weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="well_Being_Goal_Start_Date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="well_Being_Goal_User_ID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Achievements" positionX="-54" positionY="2" width="128" height="178"/>
+        <element name="Financial" positionX="16" positionY="200" width="128" height="178"/>
+        <element name="Goals_DashBoard" positionX="-54" positionY="72" width="128" height="223"/>
+        <element name="Health" positionX="16" positionY="254" width="128" height="178"/>
+        <element name="Inspirations" positionX="-56" positionY="-144" width="128" height="178"/>
+        <element name="Journal_Entries" positionX="-56" positionY="-72" width="128" height="178"/>
+        <element name="Relationships" positionX="16" positionY="306" width="128" height="178"/>
+        <element name="Rewards" positionX="-585" positionY="-250" width="128" height="178"/>
+        <element name="Stats_Board" positionX="-668" positionY="122" width="128" height="238"/>
+        <element name="User" positionX="-1503" positionY="-252" width="128" height="223"/>
+        <element name="Well_Being" positionX="18" positionY="144" width="128" height="178"/>
+        <element name="Goals" positionX="-342" positionY="63" width="128" height="313"/>
+    </elements>
+</model>
